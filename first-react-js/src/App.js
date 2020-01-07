@@ -25,7 +25,7 @@ export default class App extends React.Component {
           > 
             Learn React
           </a>
-          <Button label="Button!" onClick={this._onclick}/>
+          <Button onClick={this._onclick}> BUTTON </Button>
         </header>
         <rcc/>
       </div>
@@ -37,8 +37,6 @@ export default class App extends React.Component {
 const Button = styled.button`
   cursor: pointer;
   background: transparent;
-  width: 300px;
-  height: 45px;
   font-size: 16px;
   border-radius: 3px;
   color: palevioletred;
