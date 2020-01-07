@@ -5,29 +5,21 @@ export default class Board extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-          squares: Array(9).fill(null),
-        };
-      }
-
-
-      handleClick(index){
-        console.log('click! : ' ,index);
-        const squares = this.state.squares.slice();
-        squares[index] = 'X';
-        this.setState({squares: squares});
-      }
+        this.props = props;
+    }
 
     renderSquare(i) {
-        return <Square onClick={()=>this.handleClick(i)} value={this.state.squares[i]} />;
-      }
+        return ( <Square 
+            value={this.props.squares[i]}
+            onClick={() => this.props.onClick(i)}
+            />
+        );
+    }
     
-      render() {
-        const status = 'Next player: X';
-    
+    render() {
+
         return (
           <div>
-            <div className="status">{status}</div>
             <div className="board-row">
               {this.renderSquare(0)}
               {this.renderSquare(1)}
@@ -45,5 +37,5 @@ export default class Board extends Component {
             </div>
           </div>
         );
-      }
+    }
 }
