@@ -1,14 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class rcc extends Component {
+export default class RCC extends React.Component {
+   
+    constructor(props){
+        super(props);
+        this.props = props;
+        
+    }
     render() {
-        return (
-            <div>
-                <a className="App-link">
-                    THIS IS Second Component Using Reactjs Code Snippets!
-                </a>
-
-            </div>
-        )
+        if(this.props.b_isShowing){
+            return (
+                <div>
+                    <a className="App-link">
+                        This is Second Component Using Reactjs Code Snippets!
+                    </a>
+                </div>
+            )
+        }else{
+            return(
+                null
+            )
+        }
     }
 }

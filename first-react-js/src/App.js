@@ -2,12 +2,54 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
-import {rcc} from './rcc';
+import RCC from './RCC';
 
 export default class App extends React.Component {
 
+
+  constructor(props){
+    super(props);
+
+    this.state ={
+      b_isShowing : false,
+    }
+
+    this._onclick = this._onclick.bind(this);
+  }
+
+  componentDidMount(){
+    console.log('component Did mount!');
+  }
+
+  componentWillMount(){
+    console.log('component Will mount!'); 
+  }
+
+  componentDidCatch(){
+    console.log('component did catch!');
+  }
+
+  componentDidUpdate(){
+    console.log('component did update');
+  }
+
   _onclick(){
-    alert('onclick!');
+    // alert('onclick!');
+    this.setState(
+      {
+        b_isShowing :!this.state.b_isShowing
+      }, 
+      () => {console.log('state change! b_isSHowing : ' , this.state.b_isShowing)}
+      )
+  }
+
+
+  getText(){
+    if(this.state.b_isShowing){
+      return "HIDE"
+    }else{
+      return "SHOW"
+    }
   }
   
   render(){
@@ -17,17 +59,11 @@ export default class App extends React.Component {
           <p>
             Hello React Js!
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          > 
-            Learn React
-          </a>
-          <Button onClick={this._onclick}> BUTTON </Button>
+          <Button onClick={this._onclick}> {this.getText()} </Button>
+          
+            <RCC b_isShowing={this.state.b_isShowing} > </RCC>
+          
         </header>
-        <rcc/>
       </div>
     );
   }
