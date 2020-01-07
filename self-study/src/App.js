@@ -22,9 +22,6 @@ export default class App extends Component {
     this.setState({
       stepNumber: step,
       xIsNext: (step % 2) === 0,
-      // history: history.concat([{
-      //   squares: squares,
-      // }]),
     });
   }
 
