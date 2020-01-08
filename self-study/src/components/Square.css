@@ -13,8 +13,12 @@
     text-align: center;
     width: 34px;
   }
-  
   .square:focus {
     outline: none;
   }
+
+  .square:hover{
+    background: coral;
+  }
+  
   

@@ -39,8 +39,12 @@ export default class App extends Component {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        console.log('win boxes ' , lines[i]);
         return squares[a];
       }
+    }
+    if(this.state.stepNumber == squares.length){
+      return "Draw!";
     }
     return null;
   }
@@ -83,12 +87,17 @@ export default class App extends Component {
         </li>
       );
     });
-
+    console.log('winner : ' , winner);
     let status;
+    
     if (winner) {
       status = 'Winner: ' + winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
+
+    if(winner === 'Draw!'){
+      status = winner;
     }
 
     return (

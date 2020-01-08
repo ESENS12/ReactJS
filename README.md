@@ -3,4 +3,4 @@ ReactJS Sample, Study
  
 
 # CLI
-create-react-app first-react-js && cd first-react-js && yarn start
+create-react-app self-study && cd self-study && yarn start

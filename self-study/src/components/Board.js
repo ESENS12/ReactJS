@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Square from './Square'
+import './Board.css'
 
 export default class Board extends Component {
 
     constructor(props) {
-        super(props);
+        super(props); 
         this.props = props;
     }
 
@@ -12,15 +13,14 @@ export default class Board extends Component {
         return ( <Square 
             value={this.props.squares[i]}
             onClick={() => this.props.onClick(i)}
-            />
+            /> 
         );
     }
-    
+ 
     render() {
-
         return (
           <div>
-            <div className="board-row">
+            <div className="board-row"> 
               {this.renderSquare(0)}
               {this.renderSquare(1)}
               {this.renderSquare(2)}
