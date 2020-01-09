@@ -3,4 +3,4 @@ ReactJS Sample, Study
  
 
 # CLI
-create-react-app self-study && cd self-study && yarn start
+create-react-app simple-spa && cd simple-spa && yarn start

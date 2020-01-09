@@ -18,7 +18,6 @@ export default class App extends Component {
   }
 
   jumpTo(step) {
-    
     this.setState({
       stepNumber: step,
       xIsNext: (step % 2) === 0,
